@@ -1,1 +1,15 @@
-{"pages":{},"app":{"/Users/vedjuno/Downloads/portfolio/app/layout":["static/media/0cca447ba4806a2a-s.p.woff2","static/media/cef6530ca7ad6e46-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}
+{
+  "app": {
+    "[project]/app/_not-found/page": [
+      "static/media/88a013264a4e85f3-s.p.3d1hgzl_2jziv.woff2",
+      "static/media/0705d5f655c6cf46-s.p.15sp3jtlionyz.woff2"
+    ],
+    "[project]/app/page": [
+      "static/media/88a013264a4e85f3-s.p.3d1hgzl_2jziv.woff2",
+      "static/media/0705d5f655c6cf46-s.p.15sp3jtlionyz.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
