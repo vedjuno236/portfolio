@@ -1,0 +1,38 @@
+Build me an animated 3D personal portfolio website using Next.js 16 (App Router) with the following specifications:
+Tech Stack:
+* Next.js 16 (App Router, Server Components where appropriate)
+* TypeScript
+* Tailwind CSS for styling
+* React Three Fiber + @react-three/drei for 3D scenes (using procedural geometries — no external .glb/.gltf models)
+* Framer Motion for UI/page animations
+* GSAP + ScrollTrigger for scroll-based sequencing
+Pages/Sections:
+1. Hero Section – Full-screen R3F scene: a distorted/animated icosahedron or torus knot using MeshDistortMaterial or custom shader (via shaderMaterial), reacting to mouse movement (parallax via useFrame + pointer lerp). Name, title, tagline with staggered text reveal.
+2. About Me – Bio with a floating procedural shape (e.g., low-poly blob) using useFrame for idle rotation/float.
+3. Skills – Icon/skill cards in a 3D tilt layout (react-parallax-tilt or custom onMouseMove transform), staggered entrance via Framer Motion variants.
+4. Projects – Grid with 3D hover tilt, image previews, tech tags, live/GitHub links. Consider a <Canvas>-based card stack or horizontal scroll gallery with GSAP horizontal scroll pinning.
+5. Experience/Timeline – Vertical timeline, scroll-triggered reveal using GSAP ScrollTrigger + Framer Motion combo.
+6. Contact – Form with animated focus states, ambient procedural particle background (InstancedMesh for performance).
+3D & Animation Requirements:
+* Procedural geometries only: Icosahedron, TorusKnot, Sphere, custom BufferGeometry particle fields — no asset loading pipeline needed.
+* Custom shader material for the hero object (vertex distortion + fresnel/rim lighting) if feasible — otherwise MeshDistortMaterial/MeshWobbleMaterial from drei.
+* Particle system using InstancedMesh or Points with a custom shader for a subtle ambient background across sections.
+* Camera/pointer-based parallax in the Canvas using useThree + useFrame.
+* GSAP ScrollTrigger to sync 3D scene transforms (rotation/scale/position) with scroll progress.
+* Smooth route/page transitions via Framer Motion AnimatePresence.
+Architecture (advanced-level expectations):
+* Modular Canvas setup: separate Scene, Lights, CameraRig, and individual mesh components.
+* Custom hooks: useMousePosition, useScrollProgress, useResponsiveCanvas.
+* Zustand (or Context) for cross-component 3D state (e.g., active section driving scene changes).
+* Dynamic import of the entire <Canvas> tree with ssr: false and a Suspense fallback loader (animated CSS/SVG, not a plain spinner).
+* Performance: frustum culling awareness, dpr capping ([1, 2]), disable shadows unless essential, dispose geometries/materials on unmount.
+* Respect prefers-reduced-motion — provide a static/lightweight fallback for accessibility.
+Design:
+* Dark theme, modern/minimal, accent color: [your choice].
+* Fully responsive; 3D scene complexity scales down on mobile (reduce particle count, disable distort shaders).
+* Optional custom cursor with magnetic hover effect on interactive elements.
+Deliverables:
+* Clean modular structure: /app, /components/canvas, /components/ui, /hooks, /lib, /store
+* Reusable animation variants and shader utilities
+* Placeholder content structured for easy replacement (JSON/config-driven project & skills data)
+
